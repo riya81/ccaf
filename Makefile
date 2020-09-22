@@ -1,7 +1,6 @@
 .PHONY: push
 push: 
 	npm run publish-demo
-	npm run transpile
 	git add .
 	git commit -m "commit-auto"
 	npm version patch 

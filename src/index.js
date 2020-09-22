@@ -1,2 +1,7 @@
-const a = 1;
-console.log(a);
+import Window from './window'
+class CCAF {
+    constructor() {
+        this.Window = Window
+    }
+}
+export default CCAF;

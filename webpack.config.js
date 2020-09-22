@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // HTMLファイルのビルド設定
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
-    //template: path.join(__dirname, 'src/index.html'),
+    template: path.join(__dirname, 'src/index.html'),
     filename: './index.html'
 });
 module.exports = {
@@ -16,7 +16,12 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.js$/,
-                use: 'babel-loader',
+                use: {
+                    loader: 'babel-loader', //loader名
+                    options: { //Babelの設定
+                        presets: ['@babel/preset-env']
+                    }
+                },
                 exclude: /node_modules/
             },
             {
